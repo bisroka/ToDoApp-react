@@ -1,3 +1,4 @@
+//component is a picture, which is enabled in desktops version
 import React from "react";
 import picture from "../img/checklist.png";
 

@@ -2,7 +2,7 @@ import React from "react";
 import Task from "./Task";
 
 import "../css/TaskList.css";
-
+//task list
 const TaskList = props => {
   const active = props.tasks.filter(task => task.active);
   const done = props.tasks.filter(task => !task.active);
@@ -17,6 +17,7 @@ const TaskList = props => {
       return a - b;
     });
   }
+  //new arr with tasks TODO
   const activeTasks = active.map(task => (
     <Task
       key={task.id}
@@ -25,7 +26,7 @@ const TaskList = props => {
       change={props.change}
     />
   ));
-
+  //new arr with done tasks
   const doneTasks = done.map(task => (
     <Task
       key={task.id}

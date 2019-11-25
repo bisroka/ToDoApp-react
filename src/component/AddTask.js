@@ -2,31 +2,37 @@ import React, { Component } from "react";
 import "../css/AddTask.css";
 
 class AddTask extends Component {
+  //minDate is always 'today'
   minDate = new Date().toISOString().slice(0, 10);
   state = {
     text: "",
     checked: false,
     date: this.minDate
   };
+  //handler text in input
   handleText = e => {
     this.setState({
       text: e.target.value
     });
   };
+  //handler the 'important' checkbox
   handleCheckbox = e => {
     this.setState({
       checked: e.target.checked
     });
   };
+  //handler the date input
   handleDate = e => {
     this.setState({
       date: e.target.value
     });
   };
-
+  //handler the submit button
   handleClick = () => {
+    //destructuring
     const { text, checked, date } = this.state;
     const add = this.props.add(text, date, checked);
+    //
     if (add) {
       this.setState({
         text: "",
@@ -35,6 +41,7 @@ class AddTask extends Component {
       });
     }
   };
+
   render() {
     let maxDate = this.minDate.slice(0, 4) * 1 + 1;
     maxDate = maxDate + "-12-31";

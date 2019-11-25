@@ -7,21 +7,23 @@ import Img from "./Img";
 import "../css/App.css";
 
 class App extends Component {
+  //how many tasks
   counter = 0;
   state = {
     tasks: []
   };
-
+  //func which adding task to taskList
   addTask = (text, date, important) => {
     const task = {
       id: this.counter,
-      text, //tekst z inputa
-      date, //tekst z inputa
-      important, //wartość z inputa z inputa
+      text, //text from input
+      date, //date from input
+      important, //value from checkbox
       active: true,
       finishDate: null
     };
     this.counter++;
+    //tasks must have min 3 letters
     if (text.length > 3) {
       this.setState(prevState => ({
         tasks: [...prevState.tasks, task]
@@ -32,37 +34,28 @@ class App extends Component {
     return true;
   };
 
+  //func which delete task
   deleteTask = id => {
-    console.log("delete w komponencie App" + id);
-
-    // const tasks = [...this.state.tasks];
-    // const index = tasks.findIndex(task => task.id === id);
-    // tasks.splice(index, 1);
-    // this.setState({
-    //   tasks
-    // });
-
     let tasks = [...this.state.tasks];
     tasks = tasks.filter(task => task.id !== id);
     this.setState({
       tasks
     });
   };
+  //func which change status from done to TODO and reverse
   changeTaskStatus = id => {
-    console.log("change w komponencie App" + id);
-
     let tasks = [...this.state.tasks];
     tasks.forEach(task => {
       if (task.id === id) {
         task.active = !task.active;
         task.finishDate = new Date().getTime();
-        console.log(task.active);
       }
     });
     this.setState({
       tasks
     });
   };
+
   render() {
     return (
       <div className="App">

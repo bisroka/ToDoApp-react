@@ -7,9 +7,11 @@ const Task = props => {
     fontSize: "18px",
     textTransform: "uppercase"
   };
+  //destructuring
   const { text, date, id, active, important, finishDate } = props.task;
   if (active) {
     return (
+      //view task when is TODO
       <div>
         <p>
           <strong style={important ? style : null}>{text}</strong>
@@ -22,6 +24,7 @@ const Task = props => {
       </div>
     );
   } else {
+    //if it is done
     const finish = new Date(finishDate).toLocaleDateString();
     return (
       <div>
