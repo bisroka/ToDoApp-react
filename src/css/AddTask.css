@@ -10,6 +10,7 @@ input:focus {
 
 .form {
   font-size: 16px;
+  width: 100%;
 }
 .priority {
   cursor: pointer;

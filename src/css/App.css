@@ -1,19 +1,24 @@
 .App {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   text-align: left;
   padding: 15px;
   margin: 0 auto;
   width: 85%;
   font-family: arial;
   font-size: 16px;
-  display: flex;
-  flex-direction: row;
 }
+
 .Form {
-  width: 55%;
+  width: 100%;
 }
+
 .img {
-  height: 10%;
+  height: 20vh;
+  display: none;
 }
+
 h1 {
   font-size: 26px;
 }
@@ -21,6 +26,7 @@ h1 {
 h2 {
   font-size: 20px;
   font-weight: normal;
+  width: 100%;
 }
 h3 {
   font-size: 18px;
@@ -39,4 +45,13 @@ button {
 button:hover {
   background-color: #7a6a56;
   border: 1px solid #507589;
+}
+@media (min-width: 1000px) {
+  .img {
+    display: block;
+    height: 50vh;
+  }
+  .Form {
+    width: 55%;
+  }
 }

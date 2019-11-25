@@ -78,7 +78,7 @@ class App extends Component {
             delete={this.deleteTask}
             change={this.changeTaskStatus}
           />
-        </div>
+        </div>{" "}
         <Img class="img" />
       </div>
     );
