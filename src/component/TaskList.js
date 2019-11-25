@@ -43,7 +43,7 @@ const TaskList = props => {
       <br />
       <div className="done">
         <h3>
-          Zadania wykonane <em>{doneTasks.length}</em>
+          Zadania wykonane: <em>{doneTasks.length}</em>
         </h3>
         {doneTasks.length > 5 && (
           <span
